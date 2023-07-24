@@ -1,7 +1,6 @@
-package com.cydeo;
-import java.util.Arrays;
+package com.cydeo.twoSum;
 
-public class TwoSumProblem {
+public class TwoSum {
 
     public static void main(String[] args) {
 
