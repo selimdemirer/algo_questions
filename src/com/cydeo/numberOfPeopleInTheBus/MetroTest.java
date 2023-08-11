@@ -5,11 +5,10 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import org.junit.runners.JUnit4;
 
 
 public class MetroTest {
-    Metro metro = new Metro();
+    MetroBruteForce metro = new MetroBruteForce();
   
     @Test
     public void test1() {

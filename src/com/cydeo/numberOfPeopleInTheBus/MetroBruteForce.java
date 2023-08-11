@@ -2,7 +2,7 @@ package com.cydeo.numberOfPeopleInTheBus;
 
 import java.util.ArrayList;
 
-class Metro {
+class MetroBruteForce {
 
     public static void main(String[] args) {
         ArrayList<int[]> busStops = new ArrayList<int[]>();
