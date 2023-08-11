@@ -4,6 +4,14 @@ import java.util.ArrayList;
 
 class Metro {
 
+    public static void main(String[] args) {
+        ArrayList<int[]> busStops = new ArrayList<int[]>();
+        busStops.add(new int[] {10,0});
+        busStops.add(new int[] {3,5});
+        busStops.add(new int[] {2,5});
+        System.out.println(countPassengers(busStops));
+    }
+
     public static int countPassengers(ArrayList<int[]> stops) {
         //Code here!
 
