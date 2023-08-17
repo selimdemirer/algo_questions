@@ -6,8 +6,8 @@ public class Anagram {
 
     public static void main(String[] args) {
 
-        String s = "anagram";
-        String t = "nagaram";
+        String s = "rat";
+        String t = "car";
 
         System.out.println(isAnagram(s,t));
 

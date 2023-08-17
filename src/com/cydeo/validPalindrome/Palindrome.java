@@ -1,10 +1,42 @@
 package com.cydeo.validPalindrome;
 
 public class Palindrome {
+
+    public static void main(String[] args) {
+
+        String p = "Was it a car or a cat İ saw?";
+
+        System.out.println(isPalindrome(p));
+
+    }
+
+    private static boolean isPalindrome(String p){
+
+        String sentence = p.toLowerCase();
+        System.out.println(sentence);
+        String result = "";
+        String reversed = "";
+
+        for (int i = 0; i < sentence.length(); i++) {
+            if (sentence.charAt(i)>='a' && sentence.charAt(i)<='z') result+=sentence.charAt(i);
+        }
+
+        System.out.println(result);
+
+        for (int i = result.length()-1; i >=0; i--) {
+            reversed+=result.charAt(i);
+        }
+
+        System.out.println(reversed);
+
+        if (!result.equals(reversed)) return false;
+
+        return true;
+    }
 }
 /*
 Question-2 Valid Palindrome
-Write a function that accepts a string and determines whether it is a palindrome, ignoring nonalphanumeric characters and case and returns true if it is palindrome.
+Write a function that accepts a string and determines whether it is a palindrome, ignoring non-alphanumeric characters and case and returns true if it is palindrome.
 (A string is said to be palindrome if it reads the same backward as forward, after converting all
 uppercase letters into lowercase letters and removing all non-alphanumeric characters).
 Examples:
