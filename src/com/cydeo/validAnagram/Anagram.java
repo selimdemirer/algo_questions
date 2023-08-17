@@ -1,6 +1,32 @@
 package com.cydeo.validAnagram;
 
+import java.util.Arrays;
+
 public class Anagram {
+
+    public static void main(String[] args) {
+
+        String s = "anagram";
+        String t = "nagaram";
+
+        System.out.println(isAnagram(s,t));
+
+    }
+
+    private static boolean isAnagram(String s, String t){
+
+        if (s.length()<1 || s.length()>10000) return false;
+
+        char[] sCharArray = s.toCharArray();
+        char[] tCharArray = t.toCharArray();
+
+        Arrays.sort(sCharArray);
+        Arrays.sort(tCharArray);
+
+        if (!Arrays.equals(sCharArray,tCharArray)) return false;
+
+        return true;
+    }
 }
 /*
 Question-1 Valid Anagram
