@@ -8,7 +8,8 @@ public class TwoSumOptimal {
 
     public static void main(String[] args) {
         int[] array = new int[]{2, 7, 9, 11};
-        System.out.println(Arrays.toString(twoSumOptimalSolution(array, 9)));
+        int targetValue = 16;
+        System.out.println(Arrays.toString(twoSumOptimalSolution(array, targetValue)));
     }
 
     public static int[] twoSumOptimalSolution(int[] array, int targetValue) {
@@ -17,11 +18,12 @@ public class TwoSumOptimal {
 
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < array.length; i++) {
+//          potentialElement + array[i] = targetValue;
             int potentialMatch = targetValue - array[i];
             if (map.containsKey(potentialMatch)) return new int[]{map.get(potentialMatch),i};
-//            else map.put(array[i], i);
-
+            else map.put(array[i], i);
         }
+//        System.out.println(map);
         return new int[]{};
     }
 

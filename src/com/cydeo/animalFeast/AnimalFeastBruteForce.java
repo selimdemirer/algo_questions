@@ -1,6 +1,6 @@
 package com.cydeo.animalFeast;
 
-public class AnimalFeast {
+public class AnimalFeastBruteForce {
 
     public static void main(String[] args) {
 
@@ -35,16 +35,17 @@ public class AnimalFeast {
         //not contain numerals
 
         for (int i = 0; i < beast.length(); i++) {
-            if (beast.charAt(i)>='0' && beast.charAt(i)<='9') return false;
+            if (beast.charAt(i) >= '0' && beast.charAt(i) <= '9') return false;
         }
 
         for (int i = 0; i < dish.length(); i++) {
-            if (dish.charAt(i)>='0' && dish.charAt(i)<='9') return false;
+            if (dish.charAt(i) >= '0' && dish.charAt(i) <= '9') return false;
         }
 
         //start and end with the same letters
 
-        if (!(beast.charAt(0)==dish.charAt(0) && (beast.charAt(beast.length()-1)==dish.charAt(dish.length()-1)))) return false;
+        if (!(beast.charAt(0) == dish.charAt(0) && (beast.charAt(beast.length() - 1) == dish.charAt(dish.length() - 1))))
+            return false;
 
         return true;
     }

@@ -2,7 +2,7 @@ package com.cydeo.validAnagram;
 
 import java.util.Arrays;
 
-public class Anagram {
+public class AnagramBruteForce {
 
     public static void main(String[] args) {
 
@@ -15,7 +15,7 @@ public class Anagram {
 
     private static boolean isAnagram(String s, String t){
 
-        if (s.length()<1 || s.length()>10000) return false;
+        if (s.length()<1 || s.length()>50000) return false;
 
         char[] sCharArray = s.toCharArray();
         char[] tCharArray = t.toCharArray();
@@ -29,9 +29,9 @@ public class Anagram {
     }
 }
 /*
-Question-1 Valid Anagram
+Question-1 Valid AnagramBruteForce
 Given two strings s and t, return true if t is an anagram of s, and false otherwise.
-An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
+An AnagramBruteForce is a word or phrase formed by rearranging the letters of a different word or phrase,
 typically using all the original letters exactly once.
 Constraints:
  1 <= s.length, t.length <= 5 * 104

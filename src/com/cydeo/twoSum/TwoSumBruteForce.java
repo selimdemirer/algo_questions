@@ -2,19 +2,19 @@ package com.cydeo.twoSum;
 
 import java.util.Arrays;
 
-public class TwoSumBrutForce {
+public class TwoSumBruteForce {
 
     public static void main(String[] args) {
 
         int[] nums = {2, 7, 11, 15};
         int targetValue = 9;
-        System.out.println(Arrays.toString(twoSumSolution1(nums,9)));
+        System.out.println(Arrays.toString(twoSumSolution(nums,targetValue)));
 
     }
 
-    public static int[] twoSumSolution1(int[] nums, int targetValue){
+    public static int[] twoSumSolution(int[] nums, int targetValue){
         for (int i = 0; i < nums.length; i++) {           // its runtime complexity is : O(n^2)
-            for (int j = 1; j < nums.length; j++) {
+            for (int j = 0; j < nums.length; j++) {
                 if (i != j) {
                     if (nums[i]+nums[j]==targetValue){
                         return new int[]{i,j};
