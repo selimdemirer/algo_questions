@@ -27,8 +27,9 @@ public class SinglyLinkedListApp {
         myList.printNodes();
         System.out.println("********************6********************");
         System.out.println(myList.getKthItemFromLast(3));
-
-
+        System.out.println("********************7********************");
+        myList.removeKthItemFromLast2(3);
+        myList.printNodes();
 
     }
 }

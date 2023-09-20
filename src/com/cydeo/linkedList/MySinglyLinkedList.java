@@ -14,11 +14,11 @@ public class MySinglyLinkedList {
 
         Node current = head;
         while (current != null) {
-            if (current.next == null) System.out.println(current.id + "=> null");
+            if (current.nextAddress == null) System.out.println(current.id + "=> null");
             else {
                 System.out.println(current.id + "=>");
             }
-            current = current.next;
+            current = current.nextAddress;
         }
 
     }
@@ -31,7 +31,7 @@ public class MySinglyLinkedList {
             head = tail = node;
             size++;
         } else {
-            tail.next = node;
+            tail.nextAddress = node;
             tail = node;
             size++;
         }
@@ -47,19 +47,19 @@ public class MySinglyLinkedList {
         while (current != null) {
             if (current.id == id) {
                 if (current == head) {
-                    head = current.next;
-                    current.next = null;
+                    head = current.nextAddress;
+                    current.nextAddress = null;
                 } else if (current == tail) {
                     tail = prev;
-                    prev.next = null;
+                    prev.nextAddress = null;
                 } else {
-                    prev.next = current.next;
-                    current.next = null;
+                    prev.nextAddress = current.nextAddress;
+                    current.nextAddress = null;
                 }
                 size--;
             }
             prev = current;
-            current = current.next;
+            current = current.nextAddress;
         }
     }
 
@@ -81,7 +81,7 @@ public class MySinglyLinkedList {
         while (current != null) {
             if (current.id == id) return pos;
             pos++;
-            current = current.next;
+            current = current.nextAddress;
         }
         return -1;
     }
@@ -101,7 +101,7 @@ public class MySinglyLinkedList {
         if (isEmpty()) {
             head = tail = node;
         } else {// case 2 : list is not empty
-            node.next = head;
+            node.nextAddress = head;
             head = node;
         }
         //increase size
@@ -129,16 +129,18 @@ public class MySinglyLinkedList {
         // create two pointers
         Node ptr1 = head;
         Node ptr2 = head;
-        // move ptr2 k-1 times
 
+        // move ptr2 k-1 times
         for (int i = 0; i < k - 1; i++) {
-            ptr2 = ptr2.next;
+            ptr2 = ptr2.nextAddress;
         }
+
         // move both pointers until ptr2 hits the last element
-        while (ptr2.next != null) {
-            ptr1 = ptr1.next;
-            ptr2 = ptr2.next;
+        while (ptr2.nextAddress != null) {
+            ptr1 = ptr1.nextAddress;
+            ptr2 = ptr2.nextAddress;
         }
+
         // ptr1 is on the kth element from the last
         return ptr1.id;
     }
@@ -157,62 +159,61 @@ public class MySinglyLinkedList {
         Node ptr1 = head;
         Node ptr2 = head;
         Node prev = null;
-        // move ptr2 k-1 times
 
+        // move ptr2 k-1 times
         for (int i = 0; i < k - 1; i++) {
-            ptr2 = ptr2.next;
+            ptr2 = ptr2.nextAddress;
         }
+
         // move both pointers until ptr2 hits the last element
-        while (ptr2.next != null) {
+        while (ptr2.nextAddress != null) {
             prev = ptr1;
-            ptr1 = ptr1.next;
-            ptr2 = ptr2.next;
+            ptr1 = ptr1.nextAddress;
+            ptr2 = ptr2.nextAddress;
         }
-        // ptr1 is on the kth element from the last
-        // Do delete operation
+
+        // ptr1 is on the kth element from the last, do delete operation
+
         if (ptr1 == head) {
-            head = ptr1.next;
-            ptr1.next = null;
+            head = ptr1.nextAddress;
+            ptr1.nextAddress = null;
             size--;
         } else if (ptr1 == tail) {
             tail = prev;
-            prev.next = null;
+            prev.nextAddress = null;
             size--;
         } else {
-            prev.next = ptr1.next;
-            ptr1.next = null;
+            prev.nextAddress = ptr1.nextAddress;
+            ptr1.nextAddress = null;
             size--;
-
         }
 
     }
 
     public void removeKthItemFromLast2(int k) {
+
         Node ptr1 = head;
         Node ptr2 = head;
+
         for (int i = 0; i < k - 1; i++) {
-
-            ptr2 = ptr2.next;
-
-            if (ptr2 == null) System.out.println("Less than k elements");
-
-            else if (ptr2.next == null) {
-                head = ptr1.next;
-                ptr1.next = null;
+            ptr2 = ptr2.nextAddress;
+            if (ptr2 == null) {
+                System.out.println("Less than k elements");
+            } else if (ptr2.nextAddress == null) {
+                head = ptr1.nextAddress;
+                ptr1.nextAddress = null;
                 return;
             }
         }
-        while (ptr2.next.next != null) {
 
-            ptr1 = ptr1.next;
-            ptr2 = ptr2.next;
-
+        while (ptr2.nextAddress.nextAddress != null) {
+            ptr1 = ptr1.nextAddress;
+            ptr2 = ptr2.nextAddress;
         }
 
-        ptr1.next = ptr1.next.next;
-        ptr1 = ptr1.next;
+        ptr1.nextAddress = ptr1.nextAddress.nextAddress;
+        ptr1 = ptr1.nextAddress;
         ptr1 = null;
-
 
     }
 }
