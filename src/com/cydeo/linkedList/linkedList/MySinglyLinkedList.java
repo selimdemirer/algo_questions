@@ -1,4 +1,4 @@
-package com.cydeo.linkedList;
+package com.cydeo.linkedList.linkedList;
 
 public class MySinglyLinkedList {
 

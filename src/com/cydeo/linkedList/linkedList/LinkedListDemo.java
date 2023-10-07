@@ -1,9 +1,4 @@
-package com.cydeo.linkedList;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.stream.Collectors;
+package com.cydeo.linkedList.linkedList;
 
 public class LinkedListDemo {
 

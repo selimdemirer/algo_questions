@@ -1,8 +1,4 @@
-package com.cydeo.linkedList;
-
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+package com.cydeo.linkedList.linkedList;
 
 public class SinglyLinkedListApp {
 
