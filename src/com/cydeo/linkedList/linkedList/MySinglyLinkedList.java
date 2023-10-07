@@ -2,9 +2,9 @@ package com.cydeo.linkedList.linkedList;
 
 public class MySinglyLinkedList {
 
-    Node head;
-    Node tail;
-    int size;
+    public Node head;
+    public Node tail;
+    public int size;
 
     boolean isEmpty() {
         return head == null;
@@ -23,7 +23,7 @@ public class MySinglyLinkedList {
 
     }
 
-    void add(int data) {
+    public void add(int data) {
 
         Node node = new Node(data);
 

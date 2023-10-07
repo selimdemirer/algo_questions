@@ -2,8 +2,8 @@ package com.cydeo.linkedList.linkedList;
 
 public class Node {
 
-    int id;
-    Node nextAddress;
+    public int id;
+    public Node nextAddress;
 
     public Node(int id) {
         this.id = id;
