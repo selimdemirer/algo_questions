@@ -1,7 +1,7 @@
 package com.cydeo.linkedList;
 
-import com.cydeo.linkedList.linkedList.MySinglyLinkedList;
-import com.cydeo.linkedList.linkedList.Node;
+import com.cydeo.linkedList.linkedListDemo.MySinglyLinkedList;
+import com.cydeo.linkedList.linkedListDemo.Node;
 
 public class PrintMiddleBruteForce {
 
